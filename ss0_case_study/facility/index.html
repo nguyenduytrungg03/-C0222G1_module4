@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="icon" href="https://cdn140.picsart.com/334733793098211.png?to=crop&type=webp&r=1456x1456&q=85">
+    <script src="https://kit.fontawesome.com/8dde345a9b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- header-->
+<div class="sticky-top">
+    <header>
+        <div class="row w-100 container-fluid m-0 p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-success w-100 ">
+                <div class="col-md-2" style="text-align: center">
+                    <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png "
+                         style="width: 75px;height: 111px">
+                </div>
+
+                <div class="collapse navbar-collapse col-md-8 " style="align-items: center;justify-content: space-around">
+                    <a class="navbar-brand" style="height: 43px" href="#">Home</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            style="margin-left: 36px">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="navbar-nav mr-auto" id="navbarSupportedContent">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Customer
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{/customer}">Display</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Employee
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="/employee">Display</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown" >
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Facility
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                <a class="dropdown-item" href="/facility">Display</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Contract</a>
+                        </li>
+
+                        <form class="form-inline my-2 my-lg-0" style="margin-left: 50px">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: #241d1d">Search
+                            </button>
+                        </form>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 ">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>103-105 Vo Nguyen Giap Street, Khue My Ward,Ngu Hanh Son District, Danang City, Vietnam</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+</div>
+<!--Slide show-->
+<div class="container-fluid mg-0 p-0">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" >
+            <div class="carousel-item active">
+                <img src="https://cdn.pixabay.com/photo/2018/03/27/15/04/women-3266211_960_720.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.pixabay.com/photo/2017/08/31/10/39/hawaii-2700190_960_720.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.pixabay.com/photo/2015/01/13/13/21/paradise-598201_960_720.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+<!--Create-->
+<div class="mt-5">
+    <button id="modal1  " type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">Create Facility</button>
+</div>
+<!--End Create-->
+
+
+<!-- start Card-->
+<div class="container ">
+    <div class="row mt-5">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="room-type" style="font-size: medium">OCEAN SUITE</h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="card-text" style="font-size: small ">Room size: 85.8m
+                                    <a  class="card-text" style="font-size: small">Know more</a >
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Button modal edit -->
+                        <button id="modal1" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                        <a href="#" class="btn btn-primary">Delete</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Lagoon-Superior-twin-bed-F-370x239.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="room-type" style="font-size: medium">LAGOON SUPERIOR</h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="card-text" style="font-size: small ">Room size: 40.8m
+                                <a  class="card-text" style="font-size: small">Know more</a >
+                            </p>
+                        </div>
+                    </div>
+                     <!-- Button modal edit -->
+                    <button id="modal2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                    <a href="#" class="btn btn-primary">Delete</a>
+                </div>
+            </div>
+        </div>
+            <div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Deluxe-double-bed-F-370x239.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="room-type" style="font-size: medium">GARDEN DELUXE</h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="card-text" style="font-size: small">Room size: 43.7m
+                                    <a  class="card-text" style="font-size: small">Know more</a >
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Button modal edit -->
+                        <button id="modal3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                        <a href="#" class="btn btn-primary">Delete</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="room-type" style="font-size: medium">OCEAN SUITE</h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="card-text" style="font-size: small ">Room size: 85.8m
+                                <a  class="card-text" style="font-size: small">Know more</a >
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Button modal edit -->
+                    <button id="modal4" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                    <a href="#" class="btn btn-primary">Delete</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Lagoon-Superior-twin-bed-F-370x239.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="room-type" style="font-size: medium">LAGOON SUPERIOR</h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="card-text" style="font-size: small ">Room size: 40.8m
+                                <a  class="card-text" style="font-size: small">Know more</a >
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Button modal edit -->
+                    <button id="modal5" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                    <a href="#" class="btn btn-primary">Delete</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Deluxe-double-bed-F-370x239.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="room-type" style="font-size: medium">GARDEN DELUXE</h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="card-text" style="font-size: small">Room size: 43.7m
+                                <a  class="card-text" style="font-size: small">Know more</a >
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Button modal edit -->
+                    <button id="modal6" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                    <a href="#" class="btn btn-primary">Delete</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end card-->
+
+<!-- Modal edit -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div style="background: blue" class="modal-content">
+            <div class="modal-header d-flex justify-content-center bg-purple">
+                <h6 class="modal-title text-light" id="exampleModalLabel">Facility form</h6>
+            </div>
+            <div class="modal-body bg-white rounded-bottom">
+                <form action="/facility" method="post" id="create-customer" >
+                    <input type="hidden" id="id" placeholder="id">
+                    <div class="row d-flex justify-content-around mb-3">
+                        <div class="col-6 pr-0">
+                            <select class="form-control form-control-sm" id="facilityType" >
+                                <option>Villa</option>
+                                <option>House</option>
+                                <option>Room</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <input  id="name" type="text" placeholder="Nhập tên dịch vụ" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-around my-3">
+                        <div class="col-6">
+                            <input id="area"  type="text" placeholder="Nhập diện tích" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-6 pl-0">
+                            <input id="cost"  type="text" placeholder="Nhập Giá" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-around my-3">
+                        <div class="col-6">
+                            <input id="maxPeople"  type="text" placeholder="Tối đa bao nhiêu người" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-6 pl-0" >
+                            <select  class="form-control form-control-sm" id="rentType" >
+                                <option>Năm</option>
+                                <option>Tháng</option>
+                                <option>Ngày</option>
+                                <option>Giờ</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="standardRoom_ok">
+                        <div class="col-12">
+                            <input  type="text" placeholder="Nhập tiêu chuẩn phòng" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="description_ok">
+                        <div class="col-12">
+                            <input  type="text" placeholder="Mô tả tiện nghi" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="poolArea_ok">
+                        <div class="col-12">
+                            <input type="text" placeholder="Diện tích hồ bơi" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="floorsNumber_ok">
+                        <div class="col-12">
+                            <input  type="text" placeholder="Số tầng" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="facilityFree_ok">
+                        <div class="col-12">
+                            <input  type="text" placeholder="Dịch vụ miễn phí đi kèm" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-primary">Save</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end Modal Edit-->
+
+<!--Modal Create-->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div style="background: blue" class="modal-content">
+            <div class="modal-header d-flex justify-content-center bg-purple">
+                <h6 class="modal-title text-light" id="exampleModalLabel1">Facility form</h6>
+            </div>
+            <div class="modal-body bg-white rounded-bottom">
+                <form action="/facility" method="post" id="create-customer1" >
+                    <input type="hidden" id="idCreate" placeholder="id">
+                    <div class="row d-flex justify-content-around mb-3">
+                        <div class="col-6 pr-0">
+                            <select class="form-control form-control-sm" id="facilityTypeCreate" >
+                                <option>Villa</option>
+                                <option>House</option>
+                                <option>Room</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <input  id="nameCreate" type="text" placeholder="Nhập tên dịch vụ" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-around my-3">
+                        <div class="col-6">
+                            <input id="areaCreate"  type="text" placeholder="Nhập diện tích" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-6 pl-0">
+                            <input id="costCreate"  type="text" placeholder="Nhập Giá" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-around my-3">
+                        <div class="col-6">
+                            <input id="maxPeopleCreate"  type="text" placeholder="Tối đa bao nhiêu người" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-6 pl-0" >
+                            <select  class="form-control form-control-sm" id="rentTypeCreate" >
+                                <option>Năm</option>
+                                <option>Tháng</option>
+                                <option>Ngày</option>
+                                <option>Giờ</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="standardRoomCreate">
+                        <div class="col-12">
+                            <input  type="text" placeholder="Nhập tiêu chuẩn phòng" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="descriptionCreate">
+                        <div class="col-12">
+                            <input  type="text" placeholder="Mô tả tiện nghi" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="poolAreaCreate">
+                        <div class="col-12">
+                            <input type="text" placeholder="Diện tích hồ bơi" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="floorsNumberCreate">
+                        <div class="col-12">
+                            <input  type="text" placeholder="Số tầng" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3" id="facilityFreeCreate">
+                        <div class="col-12">
+                            <input  type="text" placeholder="Dịch vụ miễn phí đi kèm" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-around mt-3">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-primary">Save</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end Modal Create-->
+
+<!--Page-->
+<nav class="mt-2" >
+    <ul class="pagination" style="justify-content: center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+<!--end Page-->
+
+<!--Footer-->
+<footer class="mt-5">
+    <div class="row w-100 container-fluid m-0 p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-success w-100 ">
+            <div class="col-md-4 ">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png "
+                     style="width: 75px;height: 111px">
+            </div>
+            <div class="col-md-7" style="text-align: center">
+                <h3 class="text-black mb-4">
+                    FURAMA RESORT
+                </h3>
+                <div>
+                    <span> <i class="fa-solid fa-location-dot"></i>
+                        "103-105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam"
+                    </span>
+                </div>
+
+                <p>Dr Furama Resort: </p>
+                <div>
+                    <span> <i class="fa-solid fa-phone"></i>
+                    Tel: 84-236-3847 333/888
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</footer>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</html>
