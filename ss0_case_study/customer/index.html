@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="icon" href="https://cdn140.picsart.com/334733793098211.png?to=crop&type=webp&r=1456x1456&q=85">
+    <script src="https://kit.fontawesome.com/8dde345a9b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--header-->
+<div class="sticky-top">
+    <header>
+        <div class="row w-100 container-fluid m-0 p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-success w-100 ">
+                <div class="col-md-2" style="text-align: center">
+                    <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png "
+                         style="width: 75px;height: 111px">
+                </div>
+
+                <div class="collapse navbar-collapse col-md-8 " style="align-items: center;justify-content: space-around">
+                    <a class="navbar-brand" style="height: 43px" href="#">Home</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            style="margin-left: 36px">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="navbar-nav mr-auto" id="navbarSupportedContent">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Customer
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{/customer}">Display</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Employee
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="/employee">Display</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown" >
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Facility
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                <a class="dropdown-item" href="/facility">Display</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Contract</a>
+                        </li>
+
+                        <form class="form-inline my-2 my-lg-0" style="margin-left: 50px">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: #241d1d">Search
+                            </button>
+                        </form>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 ">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>103-105 Vo Nguyen Giap Street, Khue My Ward,Ngu Hanh Son District, Danang City, Vietnam</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+</div>
+<!--end header-->
+<!--List -->
+<div class="bg-menu table-info table font-weight-bold" style="padding-top: 100px">
+    <div class="container-fluid body">
+        <div class="center container-fluid">
+            <h1 style="text-align: center">Danh sách khách hàng</h1>
+            <table style="border-collapse:  collapse; width: 100%" id="employeeList">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Mã khách hàng</th>
+                    <th>Tên khách hàng</th>
+                    <th>Giới tính</th>
+                    <th>Căn cước công dân</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Loại khách hàng</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>KH-0001</td>
+                    <td>Nguyễn Duy Trung</td>
+                    <td>Nam</td>
+
+                    <td>123456789</td>
+                    <td>0353585485</td>
+                    <td>Đà Nẵng</td>
+                    <td>Diamond</td>
+
+                    <td>
+                        <!-- Button modal edit -->
+                        <button id="modal1" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                    </td>
+                    <td>
+                        <a style="color: white" href="#"
+                           onclick="customerIndex(id, 'name')"
+                           data-toggle="modal"
+                           data-target="#delete">
+                            <button class="btn btn-primary">
+                                Delete
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>KH-0002</td>
+                    <td>Huỳnh Ngọc Hiếu</td>
+                    <td>Nam</td>
+
+                    <td>45278443229</td>
+                    <td>099999222</td>
+                    <td>Hội An</td>
+                    <td>Platinum</td>
+
+                    <td>
+                        <!-- Button modal edit -->
+                        <button id="modal2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                    </td>
+                    <td>
+                        <a style="color: white" href="#"
+                           onclick="customerIndex(id, 'name')"
+                           data-toggle="modal"
+                           data-target="#delete">
+                            <button class="btn btn-primary">
+                                Delete
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>KH-0003</td>
+                    <td>Nguyễn Hoàng Hảo</td>
+                    <td>Nữ</td>
+
+                    <td>222232321</td>
+                    <td>03333221111</td>
+                    <td>Đà Nẵng</td>
+                    <td>Gold</td>
+
+                    <td>
+                        <!-- Button modal edit -->
+                        <button id="modal3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                    </td>
+                    <td>
+                        <a style="color: white" href="#"
+                           onclick="customerIndex(id, 'name')"
+
+                           data-toggle="modal"
+                           data-target="#delete">
+                            <button class="btn btn-primary">
+                                Delete
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>KH-0004</td>
+                    <td>Trần Xuân Trường</td>
+                    <td>Nam</td>
+
+                    <td>577756656</td>
+                    <td>0373483222</td>
+                    <td>Đà Nẵng</td>
+                    <td>Silver</td>
+
+                    <td>
+                        <!-- Button modal edit -->
+                        <button id="modal4" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
+                    </td>
+                    <td>
+                        <a style="color: white" href="#"
+                           onclick="customerIndex(id, 'name')"
+                           data-toggle="modal"
+                           data-target="#delete">
+                            <button class="btn btn-primary">
+                                Delete
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+<!--end List -->
+
+<!-- Modal edit -->
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div style="background: blue" class="modal-content">
+                <div class="modal-header d-flex justify-content-center bg-purple">
+                    <h6 class="modal-title text-light" id="exampleModalLabel">Customer form</h6>
+                </div>
+                <div class="modal-body bg-white rounded-bottom">
+                    <form action="/customer" method="post" id="create-customer" >
+                        <input type="hidden" id="id" placeholder="id">
+                        <div class="row d-flex justify-content-around mb-3">
+                            <div class="col-12">
+                                <input  id="codeCustomer" type="text" placeholder="Mã Khách Hàng" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-6">
+                                <input id="nameCustomer"  type="text" placeholder="Tên Khách Hàng" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-6 pl-0">
+                                <input id="gender"  type="text" placeholder="Giới tính" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-6">
+                                <input id="idCard"  type="text" placeholder="Căn cước công dân" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-6">
+                                <input id="numberPhone"  type="text" placeholder="Số điện thoại" class="form-control form-control-sm">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-around mt-3" id="address">
+                            <div class="col-12">
+                                <input  type="text" placeholder="Địa chỉ" class="form-control form-control-sm">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-around mt-3" id="typeCustomer">
+                        <div class="col-12 " >
+                            <select  class="form-control form-control-sm" id="rentType" >
+                                <option>Diamond</option>
+                                <option>Platinum</option>
+                                <option>Gold</option>
+                                <option>Silver</option>
+                            </select>
+                        </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-around mt-3">
+                            <div class="col-12">
+                                <a href="#" class="btn btn-primary">Save</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--end Modal Edit-->
+
+
+<!--Page-->
+<nav class="mt-2"x` >
+    <ul class="pagination" style="justify-content: center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+<!--end Page-->
+
+<!--Footer-->
+<footer class="mt-5">
+    <div class="row w-100 container-fluid m-0 p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-success w-100 ">
+            <div class="col-md-4 ">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo.png "
+                     style="width: 75px;height: 111px">
+            </div>
+            <div class="col-md-7" style="text-align: center">
+                <h3 class="text-black mb-4">
+                    FURAMA RESORT
+                </h3>
+                <div>
+                    <span> <i class="fa-solid fa-location-dot"></i>
+                        "103-105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam"
+                    </span>
+                </div>
+
+                <p>Dr Furama Resort: </p>
+                <div>
+                    <span> <i class="fa-solid fa-phone"></i>
+                    Tel: 84-236-3847 333/888
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</footer>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</html>
