@@ -8,6 +8,8 @@
     <script src="https://kit.fontawesome.com/8dde345a9b.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+
 <!--header-->
 <div class="sticky-top">
     <header>
@@ -77,10 +79,16 @@
     </header>
 </div>
 <!--end header-->
+
 <!--List -->
 <div class="bg-menu table-info table font-weight-bold" style="padding-top: 100px">
     <div class="container-fluid body">
         <div class="center container-fluid">
+            <!-- Create Customer  -->
+            <div class="mt-5">
+                <button id="modal1  " type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">Create Customer</button>
+            </div>
+            <!-- End Create Customer  -->
             <h1 style="text-align: center">Danh sách khách hàng</h1>
             <table style="border-collapse:  collapse; width: 100%" id="employeeList">
                 <thead>
@@ -221,7 +229,7 @@
                 </div>
                 <div class="modal-body bg-white rounded-bottom">
                     <form action="/customer" method="post" id="create-customer" >
-                        <input type="hidden" id="id" placeholder="id">
+                        <input type="hidden" id="id1" placeholder="id">
                         <div class="row d-flex justify-content-around mb-3">
                             <div class="col-12">
                                 <input  id="codeCustomer" type="text" placeholder="Mã Khách Hàng" class="form-control form-control-sm">
@@ -273,6 +281,66 @@
     </div>
 <!--end Modal Edit-->
 
+<!-- Modal Create -->
+    <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div style="background: blue" class="modal-content">
+                <div class="modal-header d-flex justify-content-center bg-purple">
+                    <h6 class="modal-title text-light" id="exampleModalLabel1">Customer form</h6>
+                </div>
+                <div class="modal-body bg-white rounded-bottom">
+                    <form action="/customer" method="post" id="create-customer1" >
+                        <input type="hidden" id="id" placeholder="id">
+                        <div class="row d-flex justify-content-around mb-3">
+                            <div class="col-12">
+                                <input  id="codeCustomer1" type="text" placeholder="Mã Khách Hàng" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-6">
+                                <input id="nameCustomer1"  type="text" placeholder="Tên Khách Hàng" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-6 pl-0">
+                                <input id="gender1"  type="text" placeholder="Giới tính" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-6">
+                                <input id="idCard1"  type="text" placeholder="Căn cước công dân" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-6">
+                                <input id="numberPhone1"  type="text" placeholder="Số điện thoại" class="form-control form-control-sm">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-around mt-3" id="address1">
+                            <div class="col-12">
+                                <input  type="text" placeholder="Địa chỉ" class="form-control form-control-sm">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-around mt-3" id="typeCustomer1">
+                            <div class="col-12 " >
+                                <select  class="form-control form-control-sm" id="rentType1" >
+                                    <option>Diamond</option>
+                                    <option>Platinum</option>
+                                    <option>Gold</option>
+                                    <option>Silver</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-around mt-3">
+                            <div class="col-12">
+                                <a href="#" class="btn btn-primary">Save</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- end Modal Create -->
 
 <!--Page-->
 <nav class="mt-2"x` >
