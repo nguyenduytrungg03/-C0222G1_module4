@@ -1,0 +1,15 @@
+<h3>Máy tính đơn giản</h3>
+
+<p>Calculator</p>
+<p>Number 1:</p>
+<input type="text" [(ngModel)]="number1">
+
+<p>Number 2:</p>
+<input type="text" [(ngModel)]="number2">
+<br>
+
+<button (click)="Addition()">Addition(+)</button>
+<button (click)="Subtraction()">Subtraction(-)</button><br>
+<button (click)="Multiplication()">Multiplication(X)</button>
+<button (click)="Division()">Division(/)</button><br>
+<p>Result: {{result}}</p>
