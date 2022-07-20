@@ -1,0 +1,277 @@
+<!--List -->
+<div class="bg-menu table-info font-weight-bold " style="margin-bottom: 0">
+    <div class="w-100">
+      <!-- Create Customer  -->
+      <div >
+        <button id="modal1" type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">Create
+          Customer
+        </button>
+      </div>
+      <!-- End Create Customer  -->
+      <h1 style="text-align: center">Danh sách khách hàng</h1>
+      <table class="table table-striped" id="employeeList">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Mã khách hàng</th>
+          <th>Tên khách hàng</th>
+          <th>Giới tính</th>
+          <th>Căn cước công dân</th>
+          <th>Số điện thoại</th>
+          <th>Địa chỉ</th>
+          <th>Loại khách hàng</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>KH-0001</td>
+          <td>Nguyễn Duy Trung</td>
+          <td>Nam</td>
+          <td>123456789</td>
+          <td>0353585485</td>
+          <td>Đà Nẵng</td>
+          <td>Diamond</td>
+          <td>
+            <!-- Button modal edit -->
+            <button id="modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit
+            </button>
+          </td>
+          <td>
+            <a style="color: white" href="#"
+               onclick="customerIndex(id, 'name')"
+               data-toggle="modal"
+               data-target="#delete">
+              <button class="btn btn-primary">
+                Delete
+              </button>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>KH-0002</td>
+          <td>Huỳnh Ngọc Hiếu</td>
+          <td>Nam</td>
+          <td>45278443229</td>
+          <td>099999222</td>
+          <td>Hội An</td>
+          <td>Platinum</td>
+          <td>
+            <!-- Button modal edit -->
+            <button id="modal2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit
+            </button>
+          </td>
+          <td>
+            <a style="color: white" href="#"
+               onclick="customerIndex(id, 'name')"
+               data-toggle="modal"
+               data-target="#delete">
+              <button class="btn btn-primary">
+                Delete
+              </button>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>KH-0003</td>
+          <td>Nguyễn Hoàng Hảo</td>
+          <td>Nữ</td>
+          <td>222232321</td>
+          <td>03333221111</td>
+          <td>Đà Nẵng</td>
+          <td>Gold</td>
+          <td>
+            <!-- Button modal edit -->
+            <button id="modal3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit
+            </button>
+          </td>
+          <td>
+            <a style="color: white" href="#"
+               onclick="customerIndex(id, 'name')"
+               data-toggle="modal"
+               data-target="#delete">
+              <button class="btn btn-primary">
+                Delete
+              </button>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>KH-0004</td>
+          <td>Trần Xuân Trường</td>
+          <td>Nam</td>
+          <td>577756656</td>
+          <td>0373483222</td>
+          <td>Đà Nẵng</td>
+          <td>Silver</td>
+          <td>
+            <!-- Button modal edit -->
+            <button id="modal4" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit
+            </button>
+          </td>
+          <td>
+            <a style="color: white" href="#"
+               onclick="customerIndex(id, 'name')"
+               data-toggle="modal"
+               data-target="#delete">
+              <button class="btn btn-primary">
+                Delete
+              </button>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  <!--end List -->
+
+  <!-- Modal edit -->
+
+  <!-- end Modal Create -->
+
+<!--  &lt;!&ndash;Page&ndash;&gt;-->
+<!--  <nav class="mt-2">-->
+<!--    <ul class="pagination" style="justify-content: center">-->
+<!--      <li class="page-item disabled">-->
+<!--        <a class="page-link" href="#" tabindex="-1">Previous</a>-->
+<!--      </li>-->
+<!--      <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--      <li class="page-item active">-->
+<!--        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>-->
+<!--      </li>-->
+<!--      <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--      <li class="page-item">-->
+<!--        <a class="page-link" href="#">Next</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </nav>-->
+<!--  &lt;!&ndash;end Page&ndash;&gt;-->
+</div>
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div style="background: blue" class="modal-content">
+      <div class="modal-header d-flex justify-content-center bg-purple">
+        <h6 class="modal-title text-light" id="exampleModalLabel">Customer form</h6>
+      </div>
+      <div class="modal-body bg-white rounded-bottom">
+        <form  method="post" id="create-customer">
+          <input type="hidden" id="id1" placeholder="id">
+          <div class="row d-flex justify-content-around mb-3">
+            <div class="col-12">
+              <input id="codeCustomer" type="text" placeholder="Mã Khách Hàng" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around my-3">
+            <div class="col-6">
+              <input id="nameCustomer" type="text" placeholder="Tên Khách Hàng" class="form-control form-control-sm">
+            </div>
+            <div class="col-6 pl-0">
+              <input id="gender" type="text" placeholder="Giới tính" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around my-3">
+            <div class="col-6">
+              <input id="idCard" type="text" placeholder="Căn cước công dân" class="form-control form-control-sm">
+            </div>
+            <div class="col-6">
+              <input id="numberPhone" type="text" placeholder="Số điện thoại" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="address">
+            <div class="col-12">
+              <input type="text" placeholder="Địa chỉ" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="typeCustomer">
+            <div class="col-12 ">
+              <select class="form-control form-control-sm" id="rentType">
+                <option>Diamond</option>
+                <option>Platinum</option>
+                <option>Gold</option>
+                <option>Silver</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3">
+            <div class="col-12">
+              <a href="#" class="btn btn-primary">Save</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end Modal Edit-->
+
+<!-- Modal Create -->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div style="background: blue" class="modal-content">
+      <div class="modal-header d-flex justify-content-center bg-purple">
+        <h6 class="modal-title text-light" id="exampleModalLabel1">Customer form</h6>
+      </div>
+      <div class="modal-body bg-white rounded-bottom">
+        <form action="/customer" method="post" id="create-customer1">
+          <input type="hidden" id="id" placeholder="id">
+          <div class="row d-flex justify-content-around mb-3">
+            <div class="col-12">
+              <input id="codeCustomer1" type="text" placeholder="Mã Khách Hàng" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around my-3">
+            <div class="col-6">
+              <input id="nameCustomer1" type="text" placeholder="Tên Khách Hàng" class="form-control form-control-sm">
+            </div>
+            <div class="col-6 pl-0">
+              <input id="gender1" type="text" placeholder="Giới tính" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around my-3">
+            <div class="col-6">
+              <input id="idCard1" type="text" placeholder="Căn cước công dân" class="form-control form-control-sm">
+            </div>
+            <div class="col-6">
+              <input id="numberPhone1" type="text" placeholder="Số điện thoại" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="address1">
+            <div class="col-12">
+              <input type="text" placeholder="Địa chỉ" class="form-control form-control-sm">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3" id="typeCustomer1">
+            <div class="col-12 ">
+              <select class="form-control form-control-sm" id="rentType1">
+                <option>Diamond</option>
+                <option>Platinum</option>
+                <option>Gold</option>
+                <option>Silver</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around mt-3">
+            <div class="col-12">
+              <a href="#" class="btn btn-primary">Save</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
