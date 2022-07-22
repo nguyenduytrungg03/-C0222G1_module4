@@ -1,0 +1,96 @@
+<h3 style="text-align: center">Form Register</h3>
+<div class="container">
+  <div class="col-6 mx-auto">
+    <form [formGroup]="registerForm" >
+      <div class="form-group ">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+               placeholder="Enter email" formControlName="Email">
+      </div>
+        <div class="text-danger" *ngIf="registerForm.controls.Email.hasError('email') &&
+                                         registerForm.controls.Email.dirty">
+
+          Wrong gmail!!
+        </div>
+      <div class="text-danger" *ngIf="registerForm.controls.Email.hasError('required')&&
+                                        registerForm.controls.Email.dirty">
+          Please input
+      </div>
+
+      <div class="form-group ">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Pasword" formControlName="Password">
+      </div>
+      <div class="text-danger" *ngIf="registerForm.controls.Password.hasError('minlength')&&registerForm.controls.Password.dirty">
+        Wrong Password
+      </div>
+      <div class="text-danger" *ngIf="registerForm.controls.Password.hasError('required')&& registerForm.controls.Password.dirty">
+        Wrong Password
+      </div>
+
+      <div class="form-group ">
+        <label for="exampleInputPassword2">Confirm Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" formControlName="Confirm">
+      </div>
+      <div class="text-danger" *ngIf="passwordMatchError && registerForm.get('Confirm').dirty">
+        not match
+      </div>
+
+      <div class="form-check p-0 ">
+        <label for="exampleFormControlSelect1">Country</label>
+        <select class="form-control" id="exampleFormControlSelect1" formControlName="Country">
+          <option value=""></option>
+          <option >Đà Nẵng</option>
+          <option>Sài Gòn</option>
+          <option>Quảng Nam</option>
+          <option>Quảng Bình</option>
+          <option>Quảng Trị</option>
+        </select>
+      </div>
+        <div class="text-danger"
+              *ngIf="registerForm.controls.Country.hasError('required') &&
+                     registerForm.controls.Country.dirty">
+          Please choose!!!
+        </div>
+
+      <div class="form-check p-0 ">
+        <div>
+          Gender
+        </div>
+        <div class="mt-2">
+        <input type="radio" value="Male"  name="gender" formControlName="gender" checked >Male
+         <input type="radio" value="Female" name="gender" formControlName="gender" >Female
+        </div>
+        <div class="text-danger" *ngIf="registerForm.controls.Gender.hasError('required')
+                                       ">
+          Please Choose!!
+        </div>
+      </div>
+
+
+      <div class="form-group mt-2 ">
+        <label for="exampleInputPassword3">Age</label>
+        <input type="number" class="form-control" id="exampleInputPassword3" formControlName="Age">
+      </div>
+      <div class="text-danger" *ngIf="registerForm.controls.Age.hasError('min')&&
+                                      registerForm.controls.Age.dirty">
+        Please, Age >=18
+      </div>
+
+      <div class="form-group ">
+        <label for="exampleInputPassword4">Phone</label>
+        <input type="text" class="form-control" id="exampleInputPassword4" formControlName="Phone" >
+      </div>
+      <div class="text-danger" *ngIf="registerForm.controls.Phone.hasError('pattern')&&
+                                      registerForm.controls.Phone.dirty">
+      Sorry....Wrong Phone
+      </div>
+
+
+
+      <div class="form-group mt-2 ">
+        <button type="submit" class="btn btn-primary" (click)="checkInfor()">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
