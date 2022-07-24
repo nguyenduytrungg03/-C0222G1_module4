@@ -1,0 +1,13 @@
+<form [formGroup]="productForm">
+  <input type="hidden" formControlName="id">
+  <label>Name:</label>
+  <input type="text" formControlName="name">
+  <br>
+  <label>Price:</label>
+  <input type="number" formControlName="price">
+  <br>
+  <label>Description:</label>
+  <input type="text" formControlName="description">
+  <br>
+  <button (click)="update()">Update</button>
+</form>
