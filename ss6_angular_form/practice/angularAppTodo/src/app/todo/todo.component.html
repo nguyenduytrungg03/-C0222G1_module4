@@ -2,12 +2,14 @@
   Todo App
 </h2>
 <div class="col-md-8 offset-md-2">
-  <input type="text" class="form-control" [formControl]="content" (change)="change()">
+  <form [formGroup]="todoForm">
+    <input type="text" class="form-control" formControlName="content" (change)="create()">
+  </form>
   <ul>
-    <li (click)="toggleTodo(i)"
-        [class.complete]="todo.complete"
-        *ngFor="let todo of todos; index as i">
+    <li *ngFor="let todo of todos; index as i">
       {{todo.content}}
+      <button (click)="deleteTodo(todo.id)">delete</button>
+      <button (click)="update(todo.id)">edit</button>
     </li>
   </ul>
 </div>

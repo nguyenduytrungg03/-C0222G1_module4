@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Todo} from "../todo";
-import {FormControl} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
+import {TodoService} from "../todo.service";
 
 let _id = 1;
 
@@ -11,28 +12,51 @@ let _id = 1;
 })
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
-  content = new FormControl();
+  todoForm: FormGroup
 
-  constructor() {
+
+  constructor(private todoService: TodoService) {
   }
 
   ngOnInit(): void {
+    this.todoService.findAll().subscribe(value => {
+      this.todos = value;
+    }, error => {
+      alert('error');
+    }, () => {
+      console.log('complete')
+    });
+    this.todoForm = new FormGroup({
+      content: new FormControl()
+    })
   }
 
-  change() {
-    const value = this.content.value;
-    if (value) {
-      const todo: Todo = {
-        id: _id++,
-        content: value,
-        complete: false
-      };
-      this.todos.push(todo);
-      this.content.reset();
-    }
+
+  deleteTodo(id: number) {
+    this.todoService.deleteTodo(id).subscribe(() => {
+    }, error => {
+      console.log(error)
+    }, () => {
+      this.ngOnInit()
+    });
   }
 
-  toggleTodo(i: number) {
-    this.todos[i].complete = !this.todos[i].complete;
+  create(): void {
+    const todo = this.todoForm.value;
+    this.todoService.saveTodo(todo).subscribe(() => {
+    }, error => {
+      console.log(error)
+    }, () => {
+      this.ngOnInit()
+    })
+  }
+  update(id: number) {
+    const todo = this.todoForm.value;
+    this.todoService.update(id,todo).subscribe(value =>{
+    },error => {
+      console.log(error)
+    },() => {
+      this.ngOnInit()
+    })
   }
 }
