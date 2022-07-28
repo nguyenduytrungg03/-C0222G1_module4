@@ -1,13 +1,31 @@
-<form [formGroup]="productForm">
-  <input type="hidden" formControlName="id">
-  <label>Name:</label>
-  <input type="text" formControlName="name">
-  <br>
-  <label>Price:</label>
-  <input type="number" formControlName="price">
-  <br>
-  <label>Description:</label>
-  <input type="text" formControlName="description">
-  <br>
-  <button (click)="update()">Update</button>
+<h1>Tạo sản phẩm mới</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+  <table>
+    <input type="number" formControlName="id" hidden>
+
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr>
+      <td>Danh mục</td>
+      <td>
+        <select formControlName="category">
+          <option *ngFor="let category of categorys" [ngValue]="category">{{category.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Chỉnh sửa</button></td>
+    </tr>
+  </table>
 </form>

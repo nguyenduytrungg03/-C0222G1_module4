@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
-import {ProductService} from "../../service/product.service";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {ProductService} from '../../service/product.service';
+import {Category} from "../../model/category";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-create',
@@ -14,17 +16,22 @@ export class ProductCreateComponent implements OnInit {
     price: new FormControl(),
     description: new FormControl(),
   });
+  categorys: Category[];
+  constructor(private productService: ProductService,
+              private router: Router) { }
 
-  constructor(private productService: ProductService) {
+  ngOnInit(): void {
+    this.productService.getAllCategory().subscribe(value => this.categorys = value);
   }
-
-  ngOnInit() {
-  }
-
   submit() {
     const product = this.productForm.value;
-    this.productService.saveProduct(product);
-    this.productForm.reset();
+    this.productService.saveProduct(product).subscribe(
+      value => {},
+      error => {},
+      () => {
+        this.router.navigateByUrl('/');
+      }
+    );
   }
 
 }

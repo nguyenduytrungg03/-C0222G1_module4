@@ -1,0 +1,28 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "Smart Phone"
+    },
+    {
+      "id": 2,
+      "name": "Laptop"
+    },
+    {
+      "id": 3,
+      "name": "PC"
+    }
+  ],
+  "product": [
+    {
+      "id": 2,
+      "name": "Macbook 11 Pro",
+      "price": 1560000,
+      "description": "Like new",
+      "category": {
+        "id": 2,
+        "name": "Laptop"
+      }
+    }
+  ]
+}

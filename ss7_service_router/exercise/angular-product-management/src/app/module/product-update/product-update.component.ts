@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductService} from "../../service/product.service";
-import {ActivatedRoute, Router,} from "@angular/router";
-import {FormControl, FormGroup} from "@angular/forms";
+import {ProductService} from '../../service/product.service';
+import {ActivatedRoute, Router, } from '@angular/router';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Category} from "../../model/category";
+import {Product} from "../../model/product";
 
 
 @Component({
@@ -10,30 +12,42 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./product-update.component.css']
 })
 export class ProductUpdateComponent implements OnInit {
-  productForm: FormGroup;
-
+  productForm: FormGroup = new FormGroup({
+    id: new FormControl(),
+    name: new FormControl(),
+    price: new FormControl(),
+    description: new FormControl(),
+    category: new FormControl(),
+  });
+  categorys: Category[];
+  product: Product;
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) {
-
-  }
+              private router: Router) { }
 
   ngOnInit(): void {
-    const id = Number(this.activatedRoute.snapshot.params.id);
-    const product = this.productService.findById(id);
-    this.productForm = new FormGroup({
-      id: new FormControl(),
-      name: new FormControl(),
-      price: new FormControl(),
-      description: new FormControl()
-    })
-    this.productForm.patchValue(product)
+    this.productService.getAllCategory().subscribe(
+      value => {this.categorys = value; },
+      error => {},
+      () => {
+        const id = Number(this.activatedRoute.snapshot.params.id);
+        this.productService.findById(id).subscribe(
+          value => {this.product = value; },
+          error => {},
+          () => this.productForm.setValue(this.product)
+        );
+      });
   }
 
-  update() {
-    let product = this.productForm.value;
+  submit() {
+    const product = this.productForm.value;
     console.log(product);
-    this.productService.updateById(product);
-    this.router.navigateByUrl('/product/list');
+    this.productService.updateProduct(product).subscribe(
+      value => {},
+      error => {},
+      () => {
+        this.router.navigateByUrl('/');
+      }
+    );
   }
 }
