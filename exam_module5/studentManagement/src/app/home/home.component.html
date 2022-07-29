@@ -32,7 +32,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr   *ngFor="let ticket of ticketList">
+      <tr  *ngFor="let ticket of ticketList |paginate : { itemsPerPage: 3, currentPage: p }">
         <td>{{ticket.id}}</td>
         <td>{{ticket.startPlay}}</td>
         <td>{{ticket.endPlay}}</td>
@@ -51,22 +51,11 @@
   </div>
 </div>
 <!--end List -->
+<div style="justify-content: space-around;display: flex;">
+  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
+</div>
 
-<nav class="mt-3" >
-  <ul class="pagination" style="justify-content: center">
-    <li class="page-item">
-      <a class="page-link" href="#" tabindex="-1">Sau</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Trước</a>
-    </li>
-  </ul>
-</nav>
+
 <!--modal xóa-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -83,7 +72,7 @@
       </div>
       <div class="modal-footer" >
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Không </button>
-        <button type="button" (click)="bookTicket(ordTicket.id)" data-dismiss="modal" class="btn btn-primary">Có</button>
+        <button type="button" (click)="bookTicket(ordTicket)" data-dismiss="modal" class="btn btn-primary">Có</button>
       </div>
     </div>
   </div>
@@ -123,6 +112,7 @@
           <div class="row d-flex justify-content-around mt-3" id="typeCustomer1">
             <div class="col-12 ">
               <select formControlName="garage" class="form-control form-control-sm" id="rentType1" >
+                <option value="">Vui lòng chọn</option>
                 <option  [selected]="true" [ngValue]="temp" *ngFor="let temp of garageList">{{temp.name}}</option>
               </select>
             </div>

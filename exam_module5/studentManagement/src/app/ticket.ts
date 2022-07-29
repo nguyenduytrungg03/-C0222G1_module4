@@ -8,5 +8,5 @@ export interface Ticket {
   dayPlay?: string,
   timePlay?: string,
   garage: Garage,
-  amount?: string,
+  amount?: number,
 }

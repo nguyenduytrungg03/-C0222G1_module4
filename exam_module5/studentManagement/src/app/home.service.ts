@@ -13,22 +13,20 @@ export class HomeService {
   constructor(private httpClient: HttpClient) {
   }
 
-  findAllTicket():Observable<Ticket[]>{
-    return this.httpClient.get<Ticket[]>(this.API_URL + '/list-ticket');
+  findAllTicket(startPlay: any):Observable<Ticket[]>{
+    return this.httpClient.get<Ticket[]>(this.API_URL + '/list-ticket?startPlay='+startPlay);
   }
 
   findAllGarage(): Observable<Garage[]> {
-    return this.httpClient.get<Garage[]>('http://localhost:3000/garageLis' )
+    return this.httpClient.get<Garage[]>(this.API_URL+ '/list-garage');
   }
 
   create(ticket: Ticket): Observable<void>{
     console.log(ticket)
-    return this.httpClient.post<void>(this.API_URL,ticket)
+    return this.httpClient.post<void>(this.API_URL +'/add-ticket',ticket)
   }
-  // bookTicket(ticket: Ticket): Observable<Ticket> {
-  //   return this.httpClient.get<Ticket>(this.API_URL + ticket, ticket.id );
-  // }
-  searchTicket(startPlay: string): Observable<Ticket[]>{
-      return this.httpClient.get<Ticket[]>(this.API_URL + '?startPlay_like=' + startPlay);
+
+  ordTicket(ticket: Ticket):Observable<Ticket>{
+  return this.httpClient.put<Ticket>(this.API_URL+ '/ord-ticket',ticket)
   }
 }
