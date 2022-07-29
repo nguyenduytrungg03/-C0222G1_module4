@@ -1,0 +1,74 @@
+{
+  "customerList": [
+    {
+      "id": 1,
+      "codeCustomer": "Kh-0001",
+      "nameCustomer": "Xuân Trường",
+      "birthday": "2022-06-28",
+      "gender": "Nam",
+      "idCard": "386729202010",
+      "phoneNumber": "0972638211",
+      "address": "Đà Nẵng",
+      "type": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 2,
+      "codeCustomer": "KH-0002",
+      "nameCustomer": "Hảo Hảo",
+      "birthday": "2022-06-27",
+      "gender": "Nữ",
+      "idCard": "462892432221",
+      "phoneNumber": "08947282111",
+      "address": "Đà Nẵng",
+      "type": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 3,
+      "codeCustomer": "KH-0003",
+      "nameCustomer": "Hiếu đầu trâu",
+      "birthday": "2022-06-28",
+      "gender": "Nữ",
+      "idCard": "283883092212",
+      "phoneNumber": "0905828221",
+      "address": "Hội An",
+      "type": {
+        "id": 3,
+        "name": "Member"
+      }
+    },
+    {
+      "id": 4,
+      "codeCustomer": "KH-0004",
+      "nameCustomer": "Cường",
+      "birthday": "2022-06-27",
+      "gender": "nam",
+      "idCard": "386729202010",
+      "phoneNumber": "0972638211",
+      "address": "Đà Nẵng",
+      "type": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    }
+  ],
+  "customerTypeList": [
+    {
+      "id": 1,
+      "name": "Gold"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Member"
+    }
+  ]
+}

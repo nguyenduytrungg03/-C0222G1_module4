@@ -8,6 +8,8 @@ import { FacilityComponent } from './facility/facility.component';
 import { CustomerComponent } from './customer/customer.component';
 import { ContractComponent } from './contract/contract.component';
 import { AppRoutingModule } from './app-routing.module';
+import {ReactiveFormsModule, FormGroup, FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,10 +20,13 @@ import { AppRoutingModule } from './app-routing.module';
     CustomerComponent,
     ContractComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

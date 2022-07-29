@@ -48,15 +48,17 @@
         <div class="card-body">
           <h3 class="room-type" style="font-size: medium">LAGOON SUPERIOR</h3>
           <div class="row">
-            <div class="col-6">
+            <div class="col-12">
               <p class="card-text" style="font-size: small ">Room size:{{item.area}}m
                 <a  class="card-text" style="font-size: small">Know more</a >
               </p>
             </div>
-            <div class="col-6">
-              <p class="card-text" style="font-size: small ">{{item.name}}
+            <div class="row">
+            <div class="col-12 ml-3">
+              <p class="card-text " style="font-size: small  ">Name: {{item.name}}
               </p>
             </div>
+          </div>
           </div>
           <!-- Button modal edit -->
           <button id="modal2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
