@@ -1,0 +1,96 @@
+{
+  "ticketList": [
+    {
+      "id": 1,
+      "startPlay": "Đà Nẵng",
+      "endPlay": "Huế",
+      "countTicket": "100000",
+      "dayPlay": "2021-09-06",
+      "timePlay": "20:00",
+      "garage": {
+        "id": 1,
+        "name": "Phương Trang"
+      },
+      "amount": "10"
+    },
+    {
+      "id": 2,
+      "startPlay": "Đà Nẵng",
+      "endPlay": "Hải Phòng",
+      "countTicket": "500000",
+      "dayPlay": "2021-09-10",
+      "timePlay": "06:00",
+      "garage": {
+        "id": 2,
+        "name": "Trung Nguyên"
+      },
+      "amount": "5"
+    },
+    {
+      "id": 3,
+      "startPlay": "Đà Nẵng",
+      "endPlay": "Hà Nội",
+      "countTicket": "4500000",
+      "dayPlay": "2021-09-06",
+      "timePlay": "07:00",
+      "garage": {
+        "id": 3,
+        "name": "Trung Tín"
+      },
+      "amount": "10"
+    },
+    {
+      "id": 4,
+      "startPlay": "Huế",
+      "endPlay": "Đà Nẵng",
+      "countTicket": "100000",
+      "dayPlay": "2021-09-06",
+      "timePlay": "20:00",
+      "garage": {
+        "id": 1,
+        "name": "Phương Trang"
+      },
+      "amount": "10"
+    },
+    {
+      "id": 5,
+      "startPlay": "Đà Nẵng",
+      "endPlay": "Huế",
+      "countTicket": "200000",
+      "dayPlay": "2022-07-29",
+      "timePlay": "16:00",
+      "garage": {
+        "id": 2,
+        "name": "Trung Nguyên"
+      },
+      "amount": "4"
+    },
+    {
+      "id": 6,
+      "startPlay": "Quảng Trị",
+      "endPlay": "Huế",
+      "countTicket": "200000",
+      "dayPlay": "2022-07-29",
+      "timePlay": "14:00",
+      "garage": {
+        "id": 2,
+        "name": "Trung Nguyên"
+      },
+      "amount": "4"
+    }
+  ],
+  "garageList": [
+    {
+      "id": 1,
+      "name": "Phương Trang"
+    },
+    {
+      "id": 2,
+      "name": "Trung Nguyên"
+    },
+    {
+      "id": 3,
+      "name": "Trung Tín"
+    }
+  ]
+}

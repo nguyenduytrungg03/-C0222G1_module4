@@ -1,0 +1,187 @@
+
+<!--List -->
+<div class=" w-100 bg-menu table-info font-weight-bold pt-5" style="margin-bottom: 0">
+  <div class="w-100 ">
+    <!-- Create Ticket  -->
+    <div class="row d-flex justify-content-between">
+      <div class="col-5">
+        <button id="modal1" type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">Thêm vé</button>
+      </div>
+      <div class="col-5" style="height: auto">
+        <div  class="form-inline my-2 " style="margin-left: 50px">
+          <input [(ngModel)]="startPlay" class="form-control " type="search" placeholder="Search" aria-label="Search">
+          <button (click)="searchTicket()" class="btn btn-outline-success " type="submit" style="color: #241d1d" >Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Create Customer  -->
+    <h1 style="text-align: center">Danh Sách Vé Xe</h1>
+    <table class="table table-striped" id="employeeList">
+      <thead>
+      <tr >
+        <th>#</th>
+        <th>Điểm đi</th>
+        <th>Điểm đến</th>
+        <th>Giá Vé</th>
+        <th>Ngày khởi hành</th>
+        <th>Giờ khởi hành</th>
+        <th>Nhà xe</th>
+        <th>Số lượng</th>
+        <th> </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr   *ngFor="let ticket of ticketList">
+        <td>{{ticket.id}}</td>
+        <td>{{ticket.startPlay}}</td>
+        <td>{{ticket.endPlay}}</td>
+        <td>{{ticket.countTicket}}</td>
+        <td>{{ticket.dayPlay}}</td>
+        <td>{{ticket.timePlay}}</td>
+        <td>{{ticket.garage.name}}</td>
+        <td>{{ticket.amount}}</td>
+        <td>
+          <button type="button" (click)="getName(ticket)"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Đặt vé
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!--end List -->
+
+<nav class="mt-3" >
+  <ul class="pagination" style="justify-content: center">
+    <li class="page-item">
+      <a class="page-link" href="#" tabindex="-1">Sau</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Trước</a>
+    </li>
+  </ul>
+</nav>
+<!--modal xóa-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa Học Sinh</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Bạn có muốn đặt vé xe từ {{ordTicket.startPlay}} đến {{ordTicket.endPlay}} vào {{ordTicket.timePlay}}
+        ngày {{ordTicket.dayPlay}} không?
+      </div>
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Không </button>
+        <button type="button" (click)="bookTicket(ordTicket.id)" data-dismiss="modal" class="btn btn-primary">Có</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end modal xóa-->
+
+<!-- Modal Create -->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div style="background: blue" class="modal-content">
+      <div class="modal-header d-flex justify-content-center bg-purple">
+        <h6 class="modal-title text-light" id="exampleModalLabel1">Thêm Vé Xe </h6>
+      </div>
+      <div class="modal-body bg-white rounded-bottom">
+        <form [formGroup]="ticketForm">
+          <input type="hidden" id="id" placeholder="id" formControlName="id">
+          <div class="row d-flex justify-content-around my-3">
+            <div class="col-12">
+              <input formControlName="startPlay" id="startPlay" type="text" placeholder="Điểm đi" class="form-control form-control-sm">
+            </div>
+            <div class="text-danger"  *ngIf="ticketForm.controls.startPlay.hasError('required')&&ticketForm.controls.startPlay.dirty">
+                Wrong Format
+            </div>
+
+          </div>
+
+          <div class="row d-flex justify-content-around my-3">
+          <div class="col-12">
+            <input formControlName="endPlay" id="endPlay" type="text" placeholder="Điểm đến" class="form-control form-control-sm">
+            <div class="text-danger"  *ngIf="ticketForm.controls.endPlay.hasError('required')&&ticketForm.controls.endPlay.dirty">
+              Wrong Format
+            </div>
+
+          </div>
+          </div>
+          <div class="row d-flex justify-content-around mt-3" id="typeCustomer1">
+            <div class="col-12 ">
+              <select formControlName="garage" class="form-control form-control-sm" id="rentType1" >
+                <option  [selected]="true" [ngValue]="temp" *ngFor="let temp of garageList">{{temp.name}}</option>
+              </select>
+            </div>
+            <div class="text-danger"  *ngIf="ticketForm.controls.garage.hasError('required')&&ticketForm.controls.garage.dirty">
+              Wrong Format
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around mt-3" >
+            <div class="col-12 ">
+              <input formControlName="dayPlay" id="dayPlay" type="date"  class="form-control form-control-sm">
+            </div>
+            <div class="text-danger"  *ngIf="ticketForm.controls.dayPlay.hasError('required')&&ticketForm.controls.dayPlay.dirty">
+              Wrong Format
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around mt-3" >
+            <div class="col-12 ">
+              <input formControlName="timePlay" id="timePlay" type="text" placeholder="Giờ khởi hành" class="form-control form-control-sm">
+            </div>
+            <div class="text-danger"  *ngIf="ticketForm.controls.timePlay.hasError('required')&&ticketForm.controls.timePlay.dirty">
+              Wrong Format
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around my-3">
+            <div class="col-12">
+              <input formControlName="amount" id="amount" type="text" placeholder="Số lượng vé" class="form-control form-control-sm">
+            </div>
+            <div class="text-danger col-4"  *ngIf="ticketForm.controls.amount.hasError('required')&&ticketForm.controls.amount.dirty">
+              Wrong Format
+            </div>
+            <div class="text-danger col-4"  *ngIf="ticketForm.controls.amount.hasError('min')&&ticketForm.controls.amount.dirty">
+              Amount>0
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-around my-3">
+          <div class="col-12">
+            <input formControlName="countTicket" id="countTicket" type="text" placeholder="Giá vé" class="form-control form-control-sm">
+          </div>
+            <div class="text-danger col-4"  *ngIf="ticketForm.controls.countTicket.hasError('required')&&ticketForm.controls.countTicket.dirty">
+              Wrong Format
+            </div>
+            <div class="text-danger col-4"  *ngIf="ticketForm.controls.countTicket.hasError('min')&&ticketForm.controls.countTicket.dirty">
+              countTicket>0
+            </div>
+          </div>
+
+
+          <div class="row d-flex justify-content-around mt-3">
+            <div class="col-6">
+              <a class="btn btn-primary" data-dismiss="modal"(click)="createTicket()">Save</a>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
